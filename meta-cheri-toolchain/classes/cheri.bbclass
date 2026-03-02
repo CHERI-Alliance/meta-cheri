@@ -1,7 +1,6 @@
 PREFERRED_PROVIDER_virtual/${TARGET_PREFIX}compilerlibs = "compiler-rt"
 
 PREFERRED_VERSION_cross-localedef = "1.0"
-PREFERRED_VERSION_cross-localedef-native = "1.0"
 
 # Don't want to build anything on the target with gcc
 BASE_DEFAULT_DEPS:remove:class-target = "virtual/${HOST_PREFIX}gcc"
@@ -99,3 +98,9 @@ SKIP_RECIPE[glibc-locale] = "not adapted for CHERI yet"
 SKIP_RECIPE[glibc-mtrace] = "not adapted for CHERI yet"
 SKIP_RECIPE[glibc-scripts] = "not adapted for CHERI yet"
 SKIP_RECIPE[glibc-testsuite] = "not adapted for CHERI yet"
+
+# Remove GCC from the cross-canadian SDK host tools. Not adapted for CHERI yet.
+RDEPENDS:packagegroup-cross-canadian-qemuriscv64cheri:remove = "gcc-cross-canadian-riscv64"
+
+# Disable GIO module cache post-install scripts for the SDK
+GIO_MODULE_PACKAGES:class-nativesdk = ""
