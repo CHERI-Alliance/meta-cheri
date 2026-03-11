@@ -11,6 +11,8 @@ KCONF_AUDIT_LEVEL ?= "2"
 CONF_BSP_AUDIT_LEVEL ?= "3"
 KMETA_AUDIT ?= "yes"
 
+KERNEL_VERSION_SANITY_SKIP = "1"
+
 SRCREV = "${AUTOREV}"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 ERROR_QA:remove = "version-going-backwards"
@@ -31,3 +33,14 @@ COMPATIBLE_MACHINE = "^qemu.*cheri$"
 # Keep kernel_configcheck task happy when it calls symbol_why.py
 CLANG_FLAGS:toolchain-clang = "-fintegrated-as"
 export CLANG_FLAGS
+
+do_install:append() {
+	if ! (grep -q -i -e '^CONFIG_MODULES=y$' .config); then
+		oe_runmake DEPMOD=echo MODLIB=${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION} INSTALL_FW_PATH=${D}${nonarch_base_libdir}/firmware modules_install
+	fi
+}
+
+KERNEL_FEATURES:remove = "features/debug/printk.scc"
+KERNEL_FEATURES:remove = "features/kernel-sample/kernel-sample.scc"
+KERNEL_FEATURES:remove = "features/taskstats/taskstats.scc"
+KERNEL_FEATURES:remove = "cfg/fs/vfat.scc"
