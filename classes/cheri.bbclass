@@ -43,7 +43,7 @@ PACKAGECONFIG:append:pn-compiler-rt = " crt"
 # We need to force the use of LLVM lld for Cheri builds
 DISTRO_FEATURES:append = " ld-is-lld"
 
-TC_CXX_RUNTIME="llvm"
+TC_CXX_RUNTIME = "llvm"
 
 # Not only is this unnecessary for cheri, it generates a warning
 # telling you this, which causes problems with some configure scripts.

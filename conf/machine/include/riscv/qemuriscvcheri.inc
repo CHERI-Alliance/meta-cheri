@@ -1,9 +1,9 @@
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-cheri"
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-cheri"
 
-PREFERRED_VERSION_nativesdk-qemu="7.0%"
-PREFERRED_VERSION_qemu="7.0%"
-PREFERRED_VERSION_qemu-native="7.0%"
+PREFERRED_VERSION_nativesdk-qemu = "7.0%"
+PREFERRED_VERSION_qemu = "7.0%"
+PREFERRED_VERSION_qemu-native = "7.0%"
 
 require conf/machine/include/qemu.inc
 require conf/machine/include/riscv/tune-riscv-cheri.inc
