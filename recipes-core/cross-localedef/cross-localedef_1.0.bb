@@ -1,8 +1,6 @@
 SUMMARY = "Dummy version of localedef"
 LICENSE = "MIT"
 
-S = "${WORKDIR}"
-
 do_populate_sysroot[depends] = ""
 
 do_install () {
