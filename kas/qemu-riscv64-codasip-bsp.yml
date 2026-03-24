@@ -5,4 +5,9 @@ header:
 
 machine: qemuriscv64cheri
 
+repos:
+  meta-cheri:
+      layers:
+        meta-cheri-codasip-bsp:
+
 target: core-image-minimal

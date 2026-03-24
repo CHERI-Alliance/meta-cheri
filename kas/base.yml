@@ -10,7 +10,7 @@ defaults:
 repos:
   meta-cheri:
       layers:
-        .:
+        meta-cheri-toolchain:
           prio: -99
 
   poky:
