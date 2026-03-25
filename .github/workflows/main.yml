@@ -32,7 +32,7 @@ jobs:
          - name: Build kas
            run: |
             cd $BUILD_DIR
-            kas build kas/qemu-riscv64-cheri-minimal-multilib.yml
+            kas build kas/qemu-riscv64-codasip-distro-multilib.yml
 
          - name: Upload build logs on failure
            if: failure()
@@ -74,7 +74,7 @@ jobs:
          - name: Build kas
            run: |
             cd $BUILD_DIR
-            kas build kas/qemu-riscv64-cheri-minimal.yml
+            kas build kas/qemu-riscv64-codasip-distro.yml
 
          - name: Upload build logs on failure
            if: failure()
