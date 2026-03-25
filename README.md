@@ -27,7 +27,7 @@ kas --version
 Building with `kas` is then as easy as:
 
 ```shell
-kas build ./kas/qemu-riscv64-cheri-minimal-multilib.yml
+kas build ./kas/qemu-riscv64-codasip-distro-multilib.yml
 ```
 
 ### Building in a container
@@ -41,17 +41,17 @@ using `--ssh-dir` and `--ssh-agent` (or using environment variables
 `KAS_SSH_DIR` and `KAS_SSH_AUTH_SOCK`):
 
 ```shell
-kas-container build kas/qemu-riscv64-cheri-minimal-multilib.yml
+kas-container build kas/qemu-riscv64-codasip-distro-multilib.yml
 ```
 
 ## Running with qemu
 
 ```shell
-kas shell kas/qemu-riscv64-cheri-minimal-multilib.yml -c 'runqemu qemuriscv64cheri nographic slirp snapshot'
+kas shell kas/qemu-riscv64-codasip-distro-multilib.yml -c 'runqemu qemuriscv64cheri nographic slirp snapshot'
 ```
 
 or for `kas-container`:
 
 ```shell
-kas-container shell kas/qemu-riscv64-cheri-minimal-multilib.yml -c 'runqemu qemuriscv64cheri nographic slirp snapshot'
+kas-container shell kas/qemu-riscv64-codasip-distro-multilib.yml -c 'runqemu qemuriscv64cheri nographic slirp snapshot'
 ```
