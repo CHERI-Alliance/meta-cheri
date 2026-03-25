@@ -26,7 +26,7 @@ else
     echo "Creating auto.conf"
     cat <<-EOF > $CONFFILE
 	MACHINE ?= "${MACHINE}"
-	DISTRO_FEATURES += "cheri"
+	DISTRO_FEATURES += "cheri ipv4 ipv6"
 	USER_CLASSES:append = " buildstats buildhistory buildstats-summary"
 	EOF
 fi
