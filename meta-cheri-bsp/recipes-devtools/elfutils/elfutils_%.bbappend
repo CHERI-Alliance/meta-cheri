@@ -5,3 +5,9 @@ SRC_URI:append = " \
     file://Avoid_overriding_libcxx_system_header.patch \
     file://config_Adjust_AM_CPPFLAGS_for_srcdir.patch \
 "
+
+EXTRA_OECONF += "--disable-demangler"
+
+PACKAGECONFIG:remove = "python"
+DEPENDS:remove = "lttng-ust"
+TOOLCHAIN = "clang"
