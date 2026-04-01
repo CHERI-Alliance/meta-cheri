@@ -1,0 +1,5 @@
+PACKAGECONFIG:remove = "debuginfod"
+PACKAGECONFIG:remove = "readline"
+DEPENDS:remove = "elfutils"
+DEPENDS:remove = "readline"
+EXTRA_OECONF:append = " --without-debuginfod --without-system-readline"
