@@ -4,7 +4,7 @@ SRC_URI = " \
     git://${META_CHERI_MUSL_REPO};protocol=${META_CHERI_MUSL_PROTOCOL};branch=${META_CHERI_MUSL_BRANCH} \
 "
 BASEVER = "1.2.0"
-SRCREV = "${AUTOREV}"
+SRCREV = "0840a4ea429cc0bdfe4ecffac77052ddb3322c47"
 PV = "${BASEVER}+git${SRCPV}"
 ERROR_QA:remove = "version-going-backwards"
 
