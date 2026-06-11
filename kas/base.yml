@@ -3,25 +3,36 @@ header:
 
 distro: cheri
 
-defaults:
-  repos:
-    branch: scarthgap
-
 repos:
   meta-cheri:
 
-  poky:
-    url: "https://git.yoctoproject.org/git/poky"
-    commit: 9497778a4d756daa29c4fa8d45d1a242d63ab8cc
-    path: layers/poky
+  bitbake:
+    path: layers/bitbake
+    url: https://git.openembedded.org/bitbake
+    tag: yocto-5.0.16
+    layers:
+      '': disabled
+
+  openembedded-core:
+    path: layers/openembedded-core
+    url: https://git.openembedded.org/openembedded-core
+    tag: yocto-5.0.16
     layers:
       meta:
+
+  meta-yocto:
+    path: layers/meta-yocto
+    url: https://git.yoctoproject.org/meta-yocto
+    tag: yocto-5.0.16
+    layers:
       meta-poky:
+      meta-yocto-bsp:
 
   meta-openembedded:
     path: layers/meta-openembedded
-    url: "https://github.com/openembedded/meta-openembedded"
-    commit:  "b4812b18eec77e9f0286bd6b81a5c3032ac0d3be"
+    url: https://github.com/openembedded/meta-openembedded
+    branch: scarthgap
+    commit: b4812b18eec77e9f0286bd6b81a5c3032ac0d3be
     layers:
       meta-oe:
       meta-python:
