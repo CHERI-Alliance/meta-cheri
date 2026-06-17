@@ -12,7 +12,6 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=2ca5f2c35c8cc335f0a19756634782f1"
 EXTRA_OEMAKE:remove = 'CC="${TARGET_PREFIX}gcc ${TOOLCHAIN_OPTIONS} ${DEBUG_PREFIX_MAP}"'
 EXTRA_OEMAKE:append = " CC='${CC}' LD='${LD}'"
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRCREV = "${AUTOREV}"
 PV = "${UBOOT_VERSION}+git${SRCPV}"
 ERROR_QA:remove = "version-going-backwards"
