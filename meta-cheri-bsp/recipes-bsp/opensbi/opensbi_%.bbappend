@@ -24,3 +24,5 @@ EXTRA_OEMAKE:append = " ${RISCV_VARS}"
 EXTRA_OEMAKE:append:cheri = " CC_SUPPORT_VECTOR=n"
 
 EXTRA_OEMAKE:append:qemuriscv64cheri = " FW_TEXT_START=0x80000000"
+
+COMPATIBLE_MACHINE:cva6cheri = "^(cva6cheri)"
