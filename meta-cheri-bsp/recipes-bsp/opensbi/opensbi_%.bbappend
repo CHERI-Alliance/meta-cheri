@@ -1,5 +1,5 @@
 ERROR_QA:remove = "version-going-backwards"
-SRCREV = "${AUTOREV}"
+SRCREV = "669eba10526ea9fd2f0442e0bb9aab433f3fb59a"
 
 SRC_URI = " \
     git://${META_CHERI_OPENSBI_REPO};protocol=${META_CHERI_OPENSBI_PROTOCOL};branch=${META_CHERI_OPENSBI_BRANCH} \
