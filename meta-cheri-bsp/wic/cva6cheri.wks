@@ -1,0 +1,5 @@
+bootloader --ptable gpt
+
+part --source rawcopy --fstype=none --sourceparams="file=fw_payload.bin"
+part --source bootimg-partition --active --fstype=vfat --fixed-size 32M
+part / --source rootfs --fstype=ext4
