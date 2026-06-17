@@ -21,6 +21,11 @@ SRC_URI = " \
     git://${META_CHERI_LINUX_REPO};protocol=${META_CHERI_LINUX_PROTOCOL};branch=${META_CHERI_LINUX_BRANCH} \
 "
 
+SRC_URI:append:cva6cheri = " \
+    file://0001-Incorporate-lowrisc-drivers-for-latest-kernel-releas.patch \
+    file://cva6.cfg \
+"
+
 LINUX_VERSION ?= "6.18.0"
 LINUX_VERSION_EXTENSION:append = "-cheri"
 
@@ -44,3 +49,5 @@ KERNEL_FEATURES:remove = "features/debug/printk.scc"
 KERNEL_FEATURES:remove = "features/kernel-sample/kernel-sample.scc"
 KERNEL_FEATURES:remove = "features/taskstats/taskstats.scc"
 KERNEL_FEATURES:remove = "cfg/fs/vfat.scc"
+
+COMPATIBLE_MACHINE:cva6cheri = "^(cva6cheri)"
