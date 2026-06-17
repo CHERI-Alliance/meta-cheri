@@ -21,5 +21,9 @@ SRC_URI = " \
     file://0001-Makefile-Strip-leading-spaces-when-preprocessing-gen.patch \
 "
 
-COMPATIBLE_MACHINE = "^qemu.*cheri$"
+SRC_URI:append:cva6cheri = " \
+    file://cva6.cfg \
+"
 
+COMPATIBLE_MACHINE = "^qemu.*cheri$"
+COMPATIBLE_MACHINE:cva6cheri = "^(cva6cheri)"
