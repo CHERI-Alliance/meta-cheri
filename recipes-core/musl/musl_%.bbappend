@@ -8,7 +8,7 @@ SRCREV = "${AUTOREV}"
 PV = "${BASEVER}+git${SRCPV}"
 ERROR_QA:remove = "version-going-backwards"
 
-LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=b03f1cc25363d094011f8f4fd8bcfb68"
+LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=0c2904cdc34777fb4067732bae145506"
 
 DEPENDS:remove = "libgcc-initial"
 DEPENDS:append = " virtual/${TARGET_PREFIX}compilerlibs"
